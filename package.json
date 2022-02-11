@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "movie_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^8.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredpasqua/movie_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredpasqua/movie_api/issues"
+  },
+  "homepage": "https://github.com/fredpasqua/movie_api#readme",
+  "description": ""
+}
