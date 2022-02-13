@@ -6,8 +6,42 @@ const app = express();
 app.use(morgan('common'));
 app.use(express.static('public'));
 
-app.get('/movies', (req, res) => {
-  res.json(topten);
+let moviestop10 = [
+  { title: "Walk the Line",
+    year: "2005",
+    genre: "Drama"
+  }, { title: "Amy",
+    year: "2015",
+    genre: "Documentary"
+  },{ title: "Hedwig and the Angry Inch",
+    year: "2001",
+    genre: "Drama"
+  },{ title: "The Doors",
+    year: "1991",
+    genre: "Drama"
+  },{ title: "Whiplash",
+    year: "2014",
+    genre: "Drama"
+  },{ title: "The Young Ones",
+    year: "1961",
+    genre: "Drama"
+  },{ title: "Cracked Actor",
+    year: "1975",
+    genre: "Documentary"
+  },{ title: "Cabaret",
+    year: "1972",
+    genre: "Drama"
+  },{ title: "Song of Summer",
+    year: "1968",
+    genre: "Drama"
+  },{ title: "The Wrecking Crew!",
+    year: "2008",
+    genre: "Documentary"
+  }
+];
+
+app.get('/toptenmovies', (req, res) => {
+  res.json(moviestop10);
 });
 
 app.get('/', (req, res) => {
