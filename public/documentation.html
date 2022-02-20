@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="documentation-styles.css"></style>
     <title>MyFlix Project</title>
   </head>
   <body>
@@ -11,29 +12,130 @@
     will provide users with access to information about different movies, directors, and genres.  Users will be able to sign up, update their
   personal information, and create a list of their favorite movies.</p>
   <p>A REST API will be part of the project.</p>
-  <h2>The 5 Ws</h2>
-  <ul>
-    <li>Who—Your immediate users will be frontend developers who’ll work on the client-side for the
-application based on what’s been documented on the server-side (in this case, this developer
-is also you!). You should also consider the users of the myFlix application. These will be
-movie enthusiasts who enjoy reading information about different movies.  </li>
-      <li>What—The complete server-side of your web application, including the server, business logic,
-and business layers of the application. It will consist of a well-designed REST API and
-architected database built using JavaScript, Node.js, Express, and MongoDB. The REST API
-will be accessed via commonly used HTTP methods like GET and POST. Similar methods
-(CRUD) will be used to retrieve data from your database and store that data in a non-relational
-way. </li>
-        <li>When—Whenever users of myFlix are interacting with the application, the server-side of the
-application will be in use, processing their requests and performing operations against the
-data in the database. These users will be able to use the myFlix application whenever they like
-to read information about different movies or update their user information, for instance, their
-list of “Favorite Movies.” </li>
-          <li>Where—The application will be hosted online. The myFlix application itself is responsive and
-can therefore be used anywhere and on any device, giving all users the same experience.</li>
-            <li>Why—Movie enthusiasts want to be able to access information about different movies,
-directors, and genres. The server-side of the myFlix application will ensure they have access
-to this information, that their requests can be processed, and that all necessary data can be
-stored.</li>
+  <table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-0lax">DESCRIPTION</th>
+      <th class="tg-0lax">METHOD</th>
+      <th class="tg-0lax">ENDPOINT URL</th>
+      <th class="tg-0lax">REQUEST BODY DATA FORMAT</th>
+      <th class="tg-0lax">REQUEST PARAMETER</th>
+      <th class="tg-0lax">RESPONSE</th>
+      <th class="tg-0lax">RESPONSE BODY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="tg-0lax">Return list of ALL Movies</td>
+      <td class="tg-0lax">GET</td>
+      <td class="tg-0lax">/movies</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">JSON object holding data about all movies.</td>
+      <td class="tg-0lax">
+        {
+        "title": "Walk the Line",
+        "description": "A movie about...",
+        "year": "2005",
+        "genre": "Drama",
+        "director": "Joe Smith",
+        "imgURL": "#",
+        "featured": true
+    },...</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Return DATA about a single movie by Title</td>
+      <td class="tg-0lax">GET</td>
+      <td class="tg-0lax">/movies/[title]</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">:title</td>
+      <td class="tg-0lax">JSON object holding data about one movie by Title</td>
+      <td class="tg-0lax">{
+      "title": "Walk the Line",
+      "description": "A movie about...",
+      "year": "2005",
+      "genre": "Drama",
+      "director": "Joe Smith",
+      "imgURL": "#",
+      "featured": true
+  }<br><br>
+If no movie then response = "Movie is not available"</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Return data about a genre (description) by name/title (e.g., "Drama")</td>
+      <td class="tg-0lax">GET</td>
+      <td class="tg-0lax">/genres/[genreName]</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">:genreName</td>
+      <td class="tg-0lax">JSON object holding data about the genre selected</td>
+      <td class="tg-0lax">{
+    "genre": "drama",
+    "description": "In film and television, drama is a category of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
+}<br><br>
+If no genre found then response ="Genre is not available"</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Return data about a Director (YearOfBirth/Death & Biography) by name (e.g., "Steven Spielberg")</td>
+      <td class="tg-0lax">GET</td>
+      <td class="tg-0lax">directors/[directorName]</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">:directorName</td>
+      <td class="tg-0lax">JSON object holding data about the director</td>
+      <td class="tg-0lax">{
+    "name": "Steven Spielberg",
+    "yearBirth": "1901",
+    "yearDeath": "1949",
+    "bio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+}<br><br>If no director found then response = "The Director was not found"</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Allow new users to register</td>
+      <td class="tg-0lax">POST</td>
+      <td class="tg-0lax">users/</td>
+      <td class="tg-0lax">JSON Format: {"name": "Joe Smith"}</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">JSON object holding data about new user w/ ID.</td>
+      <td class="tg-0lax">{id: "1", name: "Fred Pasqua", email: "tester@gmail.com"} <br><br>If no name "User must have a name" Error code 400</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Allow user to update their user info (username).</td>
+      <td class="tg-0lax">PUT</td>
+      <td class="tg-0lax">/users/:id</td>
+      <td class="tg-0lax">JSON Format: {"name": "Joe Smith"}</td>
+      <td class="tg-0lax">:id</td>
+      <td class="tg-0lax">JSON object with updated user name </td>
+      <td class="tg-0lax">{"name": "Joseph Updated", "email": "tester@gmail.com", "favorites": ["Walk the Line", "Amy"]}</td>
+    </tr>  <tr>
+      <td class="tg-0lax">Allow user to add a movie to their favorites</td>
+      <td class="tg-0lax">POST</td>
+      <td class="tg-0lax">/users/:name/:movieTitle</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">:name, ;movieTitle</td>
+      <td class="tg-0lax">text message/string</td>
+      <td class="tg-0lax">Success! ${movieTitle} has been added to ${name}'s Favorite Movies.<br><br>If user not found "no such user exists"</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed</td>
+      <td class="tg-0lax">DELETE</td>
+      <td class="tg-0lax">/users/:name/:movieTitle</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">:name, :movieTitle</td>
+      <td class="tg-0lax">Success! ${movieTitle} has been removed from ${name}'s Favorite Movies.<br><br>If no user found, "no such user exists."</td>
+      <td class="tg-0lax">NONE</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Allow existing users to deregister (showing only a text that a user email has been removed</td>
+      <td class="tg-0lax">DELETE</td>
+      <td class="tg-0lax">/users/:email</td>
+      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">:email</td>
+      <td class="tg-0lax">User with email:${email} has been removed from myFlix<br><br>If no user found, "Can't locate an account with the email address ${email}, please try again."</td>
+      <td class="tg-0lax">NONE</td>
+    </tr>
+  </tbody>
+  </table>
+
+
   </ul>
   </body>
 </html>
