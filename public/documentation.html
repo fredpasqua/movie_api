@@ -34,13 +34,13 @@
       <td class="tg-0lax">JSON object holding data about all movies.</td>
       <td class="tg-0lax">
         {
-        "title": "Walk the Line",
-        "description": "A movie about...",
-        "year": "2005",
-        "genre": "Drama",
-        "director": "Joe Smith",
-        "imgURL": "#",
-        "featured": true
+        "title": "Walk the Line",<br>
+        "description": "A movie about...",<br>
+        "year": "2005",<br>
+        "genre": "Drama",<br>
+        "director": "Joe Smith",<br>
+        "imgURL": "#",<br>
+        "featured": true<br>
     },...</td>
     </tr>
     <tr>
@@ -51,14 +51,22 @@
       <td class="tg-0lax">:title</td>
       <td class="tg-0lax">JSON object holding data about one movie by Title</td>
       <td class="tg-0lax">{
-      "title": "Walk the Line",
-      "description": "A movie about...",
-      "year": "2005",
-      "genre": "Drama",
-      "director": "Joe Smith",
-      "imgURL": "#",
-      "featured": true
-  }<br><br>
+    "Genre": {<br>
+        "Name": "Comedy",<br>
+        "Description": "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."<br>
+    },<br>
+    "Director": {<br>
+        "Name": "Judd Apatow",<br>
+        "Bio": "Judd Apatow is an American producer, writer, director, actor and stand-up comedian.",<br>
+        "Birth": "1967"<br>
+    },<br>
+    "Actors": [],<br>
+    "_id": "621839eca9f7d842a1f68daf",<br>
+    "Title": "The 40 Year-Old Virgin",<br>
+    "Description": "Goaded by his buddies, a nerdy guy who's never \"done the deed\" only finds the pressure mounting when he meets a single mother.",<br>
+    "ImagePath": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRrR290Lef_IoPLgw10i5698Ynb9180AlD4rgjwcQx4O9oImvR1",<br>
+    "Featured": false
+}<br><br>
 If no movie then response = "Movie is not available"</td>
     </tr>
     <tr>
@@ -92,44 +100,63 @@ If no genre found then response ="Genre is not available"</td>
       <td class="tg-0lax">Allow new users to register</td>
       <td class="tg-0lax">POST</td>
       <td class="tg-0lax">users/</td>
-      <td class="tg-0lax">JSON Format: {"name": "Joe Smith"}</td>
+      <td class="tg-0lax">JSON Format: {<br>
+        Userame: "Joe Smith",<br>
+        Password: "Password",<br>
+        Email: "Jsmith@email.com",<br>
+        Birthday: "Date"<br>
+      }</td>
       <td class="tg-0lax">NONE</td>
       <td class="tg-0lax">JSON object holding data about new user w/ ID.</td>
-      <td class="tg-0lax">{id: "1", name: "Fred Pasqua", email: "tester@gmail.com"} <br><br>If no name "User must have a name" Error code 400</td>
+      <td class="tg-0lax">{<br>
+        ID: 987478497489874938<br>
+        Userame: "Joe Smith",<br>
+        Password: "Password",<br>
+        Email: "Jsmith@email.com",<br>
+        Birthday: "Date"<br>
+      } <br><br>If user already exists: Error Code 400 "USER already exists!"</td>
     </tr>
     <tr>
-      <td class="tg-0lax">Allow user to update their user info (username).</td>
+      <td class="tg-0lax">Allow user to update their user info (All).</td>
       <td class="tg-0lax">PUT</td>
-      <td class="tg-0lax">/users/:id</td>
-      <td class="tg-0lax">JSON Format: {"name": "Joe Smith"}</td>
-      <td class="tg-0lax">:id</td>
-      <td class="tg-0lax">JSON object with updated user name </td>
+      <td class="tg-0lax">/users/:Username</td>
+      <td class="tg-0lax">JSON Format: {
+        Username: String,
+        (required)<br>
+        Password: String,
+        (required)<br>
+        Email: String,
+        (required)<br>
+        Birthday: Date<br>
+      }</td>
+      <td class="tg-0lax">:Username</td>
+      <td class="tg-0lax">JSON object with updated user info </td>
       <td class="tg-0lax">{"name": "Joseph Updated", "email": "tester@gmail.com", "favorites": ["Walk the Line", "Amy"]}</td>
     </tr>  <tr>
       <td class="tg-0lax">Allow user to add a movie to their favorites</td>
       <td class="tg-0lax">POST</td>
-      <td class="tg-0lax">/users/:name/:movieTitle</td>
+      <td class="tg-0lax">/users/:Username/:movieID</td>
       <td class="tg-0lax">NONE</td>
-      <td class="tg-0lax">:name, ;movieTitle</td>
-      <td class="tg-0lax">text message/string</td>
-      <td class="tg-0lax">Success! ${movieTitle} has been added to ${name}'s Favorite Movies.<br><br>If user not found "no such user exists"</td>
+      <td class="tg-0lax">:Username, ;movieID</td>
+      <td class="tg-0lax">Console Log</td>
+      <td class="tg-0lax">"MovieID was added to favorites"<br></td>
     </tr>
     <tr>
-      <td class="tg-0lax">Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed</td>
+      <td class="tg-0lax">Allow users to remove a movie from their list of favorites</td>
       <td class="tg-0lax">DELETE</td>
-      <td class="tg-0lax">/users/:name/:movieTitle</td>
+      <td class="tg-0lax">/users/:Username/movies/:movieID</td>
       <td class="tg-0lax">NONE</td>
-      <td class="tg-0lax">:name, :movieTitle</td>
-      <td class="tg-0lax">Success! ${movieTitle} has been removed from ${name}'s Favorite Movies.<br><br>If no user found, "no such user exists."</td>
-      <td class="tg-0lax">NONE</td>
+      <td class="tg-0lax">:Username, :movieID</td>
+      <td class="tg-0lax">Console Log</td>
+      <td class="tg-0lax">"MovieID was removed from favorites."</td>
     </tr>
     <tr>
-      <td class="tg-0lax">Allow existing users to deregister (showing only a text that a user email has been removed</td>
+      <td class="tg-0lax">Allow existing users to deregister</td>
       <td class="tg-0lax">DELETE</td>
-      <td class="tg-0lax">/users/:email</td>
+      <td class="tg-0lax">/users/:Username</td>
       <td class="tg-0lax">NONE</td>
-      <td class="tg-0lax">:email</td>
-      <td class="tg-0lax">User with email:${email} has been removed from myFlix<br><br>If no user found, "Can't locate an account with the email address ${email}, please try again."</td>
+      <td class="tg-0lax">:Username</td>
+      <td class="tg-0lax">"Username was deleted"<br><br>If no user found, "Username was not found."</td>
       <td class="tg-0lax">NONE</td>
     </tr>
   </tbody>
