@@ -72,7 +72,7 @@ If no movie then response = "Movie is not available"</td>
     <tr>
       <td class="tg-0lax">Return data about a genre (description) by name/title (e.g., "Drama")</td>
       <td class="tg-0lax">GET</td>
-      <td class="tg-0lax">/genres/[genreName]</td>
+      <td class="tg-0lax">/genre/[genreName]</td>
       <td class="tg-0lax">NONE</td>
       <td class="tg-0lax">:genreName</td>
       <td class="tg-0lax">JSON object holding data about the genre selected</td>
@@ -135,7 +135,7 @@ If no genre found then response ="Genre is not available"</td>
     </tr>  <tr>
       <td class="tg-0lax">Allow user to add a movie to their favorites</td>
       <td class="tg-0lax">POST</td>
-      <td class="tg-0lax">/users/:Username/:movieID</td>
+      <td class="tg-0lax">/users/:Username/movies/:movieID</td>
       <td class="tg-0lax">NONE</td>
       <td class="tg-0lax">:Username, ;movieID</td>
       <td class="tg-0lax">Console Log</td>
