@@ -1,4 +1,4 @@
-const passport = require('passport'),
+const passport = require('@types/passport'),
   LocalStrategy = require('passport-local').Strategy,
   Models = require('./models.js'),
   passportJWT = require('passport-jwt');
