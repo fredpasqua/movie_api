@@ -24,6 +24,11 @@ require('./passport');
 mongoose.connect('mongodb://localhost:27017/test',
 { useNewUrlParser: true, useUnifiedTopology: true });
 
+
+app.get('/', (req, res) => {
+  res.send('Placeholder for myFLix Movie App home page.');
+});
+
 // READ A List of All Movies
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
@@ -225,9 +230,7 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
     });
 });
 
-app.get('/', (req, res) => {
-  res.send('Placeholder for myFLix Movie App home page.');
-});
+
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
