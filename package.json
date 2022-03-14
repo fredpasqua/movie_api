@@ -15,7 +15,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "name": "movie_api",
   "version": "1.0.0",
