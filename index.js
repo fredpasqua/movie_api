@@ -7,7 +7,7 @@ const passport = require('passport');
 const app = express();
 app.use(bodyParser.json());
 app.use(morgan('common'));
-app.use(express.static('public'));
+//app.use(express.static('public'));
 app.use(bodyParser.urlencoded( { extended: true }));
 
 const mongoose = require('mongoose');
