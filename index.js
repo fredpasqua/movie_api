@@ -141,6 +141,16 @@ app.post('/users',
     });
 });
 
+app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
+  User.find()
+    .then((users) => {
+      res.status(201).json(users);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
   //UPDATE user name
   // Update a user's info, by username
 /* We’ll expect JSON in this format
