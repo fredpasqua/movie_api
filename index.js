@@ -7,6 +7,7 @@ const passport = require('passport');
 const app = express();
 app.use(bodyParser.json());
 app.use(morgan('common'));
+
 //app.use(express.static('public'));
 app.use(bodyParser.urlencoded( { extended: true }));
 
@@ -21,8 +22,11 @@ app.use(cors());
 const { check, validationResult } = require('express-validator');
 require('./passport');
 
+//MONGOOSE CONNECT FOR DEVELOPMENT
 // mongoose.connect('mongodb://localhost:27017/test',
 // { useNewUrlParser: true, useUnifiedTopology: true });
+
+//MONGOOSE CONNECT FOR DEPLOYMENT
 mongoose.connect(process.env.CONNECTION_URI,
 { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -32,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 // READ A List of All Movies
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies'/*, passport.authenticate('jwt', { session: false }), */(req, res) => {
   Movies.find()
     .then((movies) => {
       res.status(201).json(movies);
@@ -142,7 +146,7 @@ app.post('/users',
 });
 
 app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
-  User.find()
+  Users.find()
     .then((users) => {
       res.status(201).json(users);
     })
@@ -250,13 +254,13 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-
+//PORT FOR DEPLOYMENT
     const port = process.env.PORT || 8080;
     app.listen(port, '0.0.0.0',() => {
      console.log('Listening on Port ' + port);
     });
 
-
+//PORT FOR DEVELOPMENT
 // app.listen(27017, () => {
 //   console.log('Your app is listening on port 27017.');
 // });
