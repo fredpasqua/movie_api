@@ -17,8 +17,9 @@ const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
 const cors = require('cors');
-const auth = require('./auth')(app);
 app.use(cors());
+const auth = require('./auth')(app);
+
 const { check, validationResult } = require('express-validator');
 require('./passport');
 
@@ -36,7 +37,7 @@ app.get('/', (req, res) => {
 });
 
 // READ A List of All Movies
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
     .then((movies) => {
       res.status(201).json(movies);
@@ -261,6 +262,6 @@ app.use((err, req, res, next) => {
     });
 
 //PORT FOR DEVELOPMENT
-// app.listen(27017, () => {
+// app.listen(1234, () => {
 //   console.log('Your app is listening on port 27017.');
 // });
