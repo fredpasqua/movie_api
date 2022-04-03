@@ -19,7 +19,6 @@ const Users = Models.User;
 const cors = require('cors');
 app.use(cors());
 const auth = require('./auth')(app);
-
 const { check, validationResult } = require('express-validator');
 require('./passport');
 
@@ -37,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 // READ A List of All Movies
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.get('/movies', (req, res) => {
   Movies.find()
     .then((movies) => {
       res.status(201).json(movies);
