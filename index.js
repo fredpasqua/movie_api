@@ -109,6 +109,7 @@ app.post('/users',
   [
     check('Username', 'Username is required').isLength({min: 5}),
     check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('Password', 'Password must contain atleast 6 characters').isLength({min: 6}),
     check('Password', 'Password is required').not().isEmpty(),
     check('Email', 'Email does not appear to be valid').isEmail()
   ], (req, res) => {
@@ -149,6 +150,17 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
   Users.find()
     .then((users) => {
       res.status(201).json(users);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
+
+app.get('/users/:username', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Users.findOne( { Username: req.body.Username })
+    .then((username) => {
+      res.status(201).json(username);
     })
     .catch((err) => {
       console.error(err);
