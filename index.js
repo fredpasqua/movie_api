@@ -147,10 +147,10 @@ app.post('/users',
 });
 
 app.get('/users/:username', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Users.findOne({ Username: req.params.username })
-    .then((username) => {
-        if (username){
-        res.status(201).json(username);
+  Users.findOne({ Username: req.params.Username })
+    .then((user) => {
+        if (user){
+        res.status(201).json(user);
       }else{
         res.status(400).send('No Such User Exists!')
       }
@@ -161,16 +161,6 @@ app.get('/users/:username', passport.authenticate('jwt', { session: false }), (r
       });
     });
 
-app.get('/users/:username', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Users.findOne( { Username: req.body.Username })
-    .then((username) => {
-      res.status(201).json(username);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
-});
   //UPDATE user name
   // Update a user's info, by username
 /* We’ll expect JSON in this format
