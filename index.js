@@ -185,7 +185,7 @@ if (!errors.isEmpty()) {
   return res.status(422).json({ errors: errors.array() });
 }
 
-  Users.findOneAndUpdate({ Username: req.params.username }, { $set:
+  Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
     {
       Username: req.body.Username,
       Email: req.body.Email,
