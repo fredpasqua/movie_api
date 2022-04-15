@@ -16,8 +16,8 @@ const Models = require('./models.js');
 
 const Movies = Models.Movie;
 const Users = Models.User;
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
+app.use(cors());
 const auth = require('./auth')(app);
 const { check, validationResult } = require('express-validator');
 require('./passport');
@@ -173,12 +173,12 @@ app.get('/users/:username', passport.authenticate('jwt', { session: false }), (r
   (required)
   Birthday: Date
 }*/
-app.put('/users/:Username', passport.authenticate('jwt', { session: false }),
-// [
-//   check('Username', 'Username is required').isLength({min: 5}),
-//   check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
-//   check('Email', 'Email does not appear to be valid').isEmail()
-// ],
+app.put('/users/:Username'),
+[
+  check('Username', 'Username is required').isLength({min: 5}),
+  check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('Email', 'Email does not appear to be valid').isEmail()
+],
 (req, res) => {
   let errors = validationResult(req);
 
