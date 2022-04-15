@@ -202,7 +202,7 @@ if (!errors.isEmpty()) {
       res.json(updatedUser);
     }
   });
-});
+};
 
 //CREATE user favorite movie
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
