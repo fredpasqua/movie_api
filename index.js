@@ -173,17 +173,17 @@ app.get('/users/:username', passport.authenticate('jwt', { session: false }), (r
   (required)
   Birthday: Date
 }*/
-app.put('/users/:Username'),
-// [
-//   check('Username', 'Username is required').isLength({min: 5}),
-//   check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
-//   check('Email', 'Email does not appear to be valid').isEmail()
-// ],
+app.put('/users/:Username'), passport.authenticate('jwt', { session: false }),
+[
+  check('Username', 'Username is required').isLength({min: 5}),
+  check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('Email', 'Email does not appear to be valid').isEmail()
+],
 (req, res) => {
-//   let errors = validationResult(req);
-//
-// if (!errors.isEmpty()) {
-//   return res.status(422).json({ errors: errors.array() });
+  let errors = validationResult(req);
+
+if (!errors.isEmpty()) {
+  return res.status(422).json({ errors: errors.array() });
 }
 
   Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
@@ -202,7 +202,7 @@ app.put('/users/:Username'),
       res.json(updatedUser);
     }
   });
-;
+};
 
 //CREATE user favorite movie
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
