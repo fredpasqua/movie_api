@@ -16,8 +16,8 @@ const Models = require('./models.js');
 
 const Movies = Models.Movie;
 const Users = Models.User;
-// const cors = require('cors');
-// app.use(cors());
+const cors = require('cors');
+app.use(cors());
 const auth = require('./auth')(app);
 const { check, validationResult } = require('express-validator');
 require('./passport');
