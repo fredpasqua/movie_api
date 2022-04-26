@@ -173,7 +173,7 @@ app.get('/users/:username', passport.authenticate('jwt', { session: false }), (r
   (required)
   Birthday: Date
 }*/
-app.put('/users/:Username'), [ passport.authenticate('jwt', { session: false }),
+app.put('/users/:Username', [ passport.authenticate('jwt', { session: false }),
 
   check('Username', 'Username is required').isLength({min: 5}),
   check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
@@ -202,7 +202,7 @@ if (!errors.isEmpty()) {
       res.json(updatedUser);
     }
   });
-};
+});
 
 //CREATE user favorite movie
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
