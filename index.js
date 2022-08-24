@@ -35,7 +35,14 @@ app.get('/', (req, res) => {
   res.send('Placeholder for myFLix Movie App home page.');
 });
 
-// READ A List of All Movies
+
+
+
+
+
+/** 
+ * READ A List of All Movies. 
+ */
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
     .then((movies) => {
@@ -63,7 +70,7 @@ app.get('/movies/:title', passport.authenticate('jwt', { session: false }), (req
     });
 });
 
-//!!!!!READ the description of a genre by genre type
+//READ the description of a genre by genre type
 app.get('/genre/:genreName', passport.authenticate('jwt', { session: false }), (req, res) => {
    Movies.findOne({'Genre.Name' : req.params.genreName })
     .then((movie) => {
