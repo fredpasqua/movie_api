@@ -1,11 +1,9 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="documentation-styles.css"></style>
-    <title>MyFlix Project</title>
-  </head>
+
+  MyFlix API
+
   <body>
     <h1>Documentation Page</h1>
     <h2>Project: myFlix Movie App</h2>
