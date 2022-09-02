@@ -8,7 +8,7 @@
   
   ### Technical Requirements of the Project
 <ul>
-<li>The API was built with Node.js and Express.</li>
+<li>The API was built with Node.js with Express.</li>
 <li>The API uses REST architecture, with URL endpoints performing CRUD operations.</li>
 <li>The API uses middleware modules, including body-parser package for
 reading data from requests and morgan for logging.</li>
