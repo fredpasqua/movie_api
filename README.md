@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  MyFlix API
+
 
   <body>
+     
     <h1>Documentation Page</h1>
     <h2>Project: myFlix Movie API</h2>
     <p>This project focused on building a server-side component of a "movies" web application.  The web application
     will provide users with access to information about different movies, directors, and genres.  Users will be able to sign up, update their
   personal information, and create a list of their favorite movies.</p>
-  
     <h2>Technical Requirements of the Project</h2>
     <ul>
       <li>The API was built with Node.js and Express.</li>
@@ -23,8 +23,7 @@ reading data from requests and morgan for logging.</li>
 <li>The API endpoints were tested using Postman.</li>
 <li>The API includes user authentication and authorization code.</li>
 <li>The API includes data validation logic.</li>
-<li>The API was deployed to Heroku</li>
-    
+<li>The API was deployed to Heroku</li> 
     <h2>API ENDPOINTS</h2>
   <table class="tg">
   <thead>
