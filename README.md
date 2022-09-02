@@ -11,18 +11,19 @@
     will provide users with access to information about different movies, directors, and genres.  Users will be able to sign up, update their
   personal information, and create a list of their favorite movies.</p>
   
-    <h2> Technical Requirements of the Project</h2>
-● The API was built with Node.js and Express.
-● The API uses REST architecture, with URL endpoints performing CRUD operations.
-● The API uses middleware modules, including body-parser package for
-reading data from requests and morgan for logging.
-● The database was built using MongoDB.
-● The business logic was modeled with Mongoose.
-● The API provides movie information in JSON format.
-● The API endpoints were tested using Postman.
-● The API includes user authentication and authorization code.
-● The API includes data validation logic.
-● The API was deployed to Heroku
+    <h2>Technical Requirements of the Project</h2>
+    <ul>
+      <li>The API was built with Node.js and Express.</li>
+<li>The API uses REST architecture, with URL endpoints performing CRUD operations.</li>
+<li>The API uses middleware modules, including body-parser package for
+reading data from requests and morgan for logging.</li>
+<li>The database was built using MongoDB.</li>
+<li>The business logic was modeled with Mongoose.</li>
+<li>The API provides movie information in JSON format.</li>
+<li>The API endpoints were tested using Postman.</li>
+<li>The API includes user authentication and authorization code.</li>
+<li>The API includes data validation logic.</li>
+<li>The API was deployed to Heroku</li>
     
     <h2>API ENDPOINTS</h2>
   <table class="tg">
