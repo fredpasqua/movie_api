@@ -1,6 +1,4 @@
-  
-  # Documentation Page
-  ## myFlix Movie API
+# myFlix Movie API
   This project focused on building a server-side component of a "movies" web application.  
   The web application provides users with access to information about different movies, directors, 
   and genres.  Users are able to sign up, update their
