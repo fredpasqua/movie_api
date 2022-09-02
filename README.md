@@ -6,7 +6,7 @@
 
   <body>
      
-  Documentation Page
+    <h3>Documentation Page</h3>
   Project: myFlix Movie API
     This project focused on building a server-side component of a "movies" web application.  The web application
     will provide users with access to information about different movies, directors, and genres.  Users will be able to sign up, update their
