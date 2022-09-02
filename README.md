@@ -1,8 +1,10 @@
 # myFlix Movie API
-  This project focused on building a server-side component of a "movies" web application.  
+  This projects focus was to build a server-side component of a "movies" web application.  
   The web application provides users with access to information about different movies, directors, 
   and genres.  Users are able to sign up, update their
   personal information, and create a list of their favorite movies.
+    
+  [View the API in action here](https://fredpasqua.github.io/myflix-v2/#/)
   
   ### Technical Requirements of the Project
 <ul>
@@ -168,5 +170,6 @@ If no genre found then response ="Genre is not available"</td>
     </tr>
   </tbody>
   </table>
+
 
 
