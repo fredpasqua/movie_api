@@ -1,12 +1,14 @@
   
-   # Documentation Page
+  # Documentation Page
   ## myFlix Movie API
-    This project focused on building a server-side component of a "movies" web application.  The web application
-    will provide users with access to information about different movies, directors, and genres.  Users will be able to sign up, update their
+  This project focused on building a server-side component of a "movies" web application.  
+  The web application provides users with access to information about different movies, directors, 
+  and genres.  Users are able to sign up, update their
   personal information, and create a list of their favorite movies.
+  
   ### Technical Requirements of the Project
-    <ul>
-      <li>The API was built with Node.js and Express.</li>
+<ul>
+<li>The API was built with Node.js and Express.</li>
 <li>The API uses REST architecture, with URL endpoints performing CRUD operations.</li>
 <li>The API uses middleware modules, including body-parser package for
 reading data from requests and morgan for logging.</li>
