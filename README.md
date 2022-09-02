@@ -3,9 +3,7 @@
   The web application provides users with access to information about different movies, directors, 
   and genres.  Users are able to sign up, update their
   personal information, and create a list of their favorite movies.
-    
-  [View the API in action here](https://fredpasqua.github.io/myflix-v2/#/){:target="_blank"} 
-  
+   
   ### Technical Requirements of the Project
 <ul>
 <li>The API was built with Node.js with Express.</li>
@@ -170,6 +168,7 @@ If no genre found then response ="Genre is not available"</td>
     </tr>
   </tbody>
   </table>
+    [View the API in action here](https://fredpasqua.github.io/myflix-v2/#/)
 
 
 
