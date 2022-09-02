@@ -4,7 +4,7 @@
   and genres.  Users are able to sign up, update their
   personal information, and create a list of their favorite movies.
     
-  [View the API in action here](https://fredpasqua.github.io/myflix-v2/#/)
+  [View the API in action here](https://fredpasqua.github.io/myflix-v2/#/){:target="_blank"} 
   
   ### Technical Requirements of the Project
 <ul>
