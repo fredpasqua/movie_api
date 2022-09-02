@@ -1,17 +1,10 @@
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-
-
-  <body>
-     
-    <h3>Documentation Page</h3>
-  Project: myFlix Movie API
+  
+   # Documentation Page
+  ## myFlix Movie API
     This project focused on building a server-side component of a "movies" web application.  The web application
     will provide users with access to information about different movies, directors, and genres.  Users will be able to sign up, update their
   personal information, and create a list of their favorite movies.
-    <h2>Technical Requirements of the Project</h2>
+  ### Technical Requirements of the Project
     <ul>
       <li>The API was built with Node.js and Express.</li>
 <li>The API uses REST architecture, with URL endpoints performing CRUD operations.</li>
@@ -24,6 +17,7 @@ reading data from requests and morgan for logging.</li>
 <li>The API includes user authentication and authorization code.</li>
 <li>The API includes data validation logic.</li>
 <li>The API was deployed to Heroku</li> 
+  </ul>
     <h2>API ENDPOINTS</h2>
   <table class="tg">
   <thead>
@@ -176,6 +170,3 @@ If no genre found then response ="Genre is not available"</td>
   </table>
 
 
-  </ul>
-  </body>
-</html>
