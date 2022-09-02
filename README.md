@@ -6,11 +6,11 @@
 
   <body>
      
-    <H1>Documentation Page</H1>
-    <h2>Project: myFlix Movie API</h2>
-    <p>This project focused on building a server-side component of a "movies" web application.  The web application
+  Documentation Page
+  Project: myFlix Movie API
+    This project focused on building a server-side component of a "movies" web application.  The web application
     will provide users with access to information about different movies, directors, and genres.  Users will be able to sign up, update their
-  personal information, and create a list of their favorite movies.</p>
+  personal information, and create a list of their favorite movies.
     <h2>Technical Requirements of the Project</h2>
     <ul>
       <li>The API was built with Node.js and Express.</li>
